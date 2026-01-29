@@ -1,0 +1,124 @@
+/* Importar una fuente bonita de Google Fonts (Opcional pero recomendado) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Contenedor Principal --- */
+.header-container {
+    background-color: #1a1a1a; 
+    color: #ffffff;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; /* Centra verticalmente */
+    padding: 0.5rem 2rem; /* Espacio arriba/abajo e izq/der */
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave abajo */
+    position: fixed; /* Fijo al top para ocupar todo el ancho */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* --- Logotipo --- */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px; /* Ajusta esto según el tamaño de tu imagen */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Efecto zoom suave */
+}
+
+/* --- Menú Central --- */
+.menu-list {
+    display: flex;
+    list-style: none; /* Quita los puntos de la lista */
+    gap: 2rem; /* Espacio entre palabras */
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list li {
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efecto Hover (Línea debajo al pasar el mouse) */
+.menu-list li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #61dafb; /* Color azul estilo React */
+    transition: width 0.3s ease;
+}
+
+.menu-list li:hover {
+    color: #61dafb;
+}
+
+.menu-list li:hover::after {
+    width: 100%;
+}
+
+/* --- Redes Sociales --- */
+.redes-list {
+    display: flex;
+    list-style: none;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.redes-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    cursor: pointer;
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.redes-list img {
+    height: 18px;
+    width: auto;
+    display: block;
+}
+
+.redes-list li:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08); 
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; 
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .menu-list {
+        gap: 1rem;
+        flex-wrap: wrap; /* Permitir que bajen de línea si no caben */
+        justify-content: center;
+    }
+}

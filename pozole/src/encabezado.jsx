@@ -1,46 +1,51 @@
 import Logos from './assets/logo.jpg';
+import './Encabezado.css'; 
 
-function Encabezado(){
+
+function Encabezado() {
     return (
-        <div>
-            <Logotipo/>
-            <Menu/>
+        <header className="header-container">
+            <Logotipo />
+            <Menu />
+            <Redes />
+        </header>
+    )
+}
+
+function Logotipo() {
+    return (
+        <div className="logo-container">
+            <img src={Logos} alt="Logotipo" className="logo-img" />
         </div>
     )
 }
-function Logotipo(){
-   return(
-    <div>
-        <img src={Logos} alt="Logotipo"/>
-    </div>      
-   )
-}
 
-function Menu(){    
-    return(
-        <div>     
-            <ul>
+function Menu() {
+    return (
+        <nav className="menu-container">
+            <ul className="menu-list">
                 <li>Inicio</li>
                 <li>Acerca de</li>
                 <li>Productos</li>
                 <li>Contacto</li>
                 <li>Sucursales</li>
             </ul>
-        </div>
+        </nav>
     )
 }
 
-function redes(){
-    return(
-        <div>
-            <ul>
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>Twitter</li>
-                <li>Linkedin</li>
+function Redes() {
+    return (
+        <div className="redes-container">
+            <ul className="redes-list">
+                <li><img src="/src/assets/feibu.png" alt="Facebook" className="redes-img" /></li>
+                <li><img src="/src/assets/ig.png" alt="Instagram" className="redes-img" /></li>
+                <li><img src="/src/assets/x.avif" alt="Twitter" className="redes-img" /></li>
+                <li><img src="/src/assets/link.png" alt="Linkedin" className="redes-img" /></li>
             </ul>
         </div>
     )
 }
 
 export default Encabezado
+
