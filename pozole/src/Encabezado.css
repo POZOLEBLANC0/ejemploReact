@@ -3,7 +3,8 @@
 
 /* --- Contenedor Principal --- */
 .header-container {
-    background-color: #1a1a1a; 
+background: #000000;
+background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 239, 247, 1) 100%, rgba(199, 87, 87, 1) 100%);
     color: #ffffff;
     display: flex; 
     justify-content: space-between; 

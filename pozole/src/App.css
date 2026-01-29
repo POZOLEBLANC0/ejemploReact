@@ -40,3 +40,19 @@
 .read-the-docs {
   color: #888;
 }
+
+/* --- Estilos para Cards --- */
+.card1, .card2 {
+  background: linear-gradient(180deg, #2a2a2a, #1f1f1f);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 720px;
+  border-radius: 8px;
+  color: #eee;
+  text-align: left;
+}
+
+.card1 h3, .card2 h3 {
+  margin-top: 0;
+}
