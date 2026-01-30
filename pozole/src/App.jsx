@@ -9,9 +9,7 @@ function App() {
     <div><Encabezado/>
       <Expresiones/>
       <Cards/>
-      <h1>5C DSM origiales de Chimalhuacan</h1>
-      <h2>Pura UTSEX</h2>
-          <Footer/>
+       <Footer/>
     </div>
  
   )

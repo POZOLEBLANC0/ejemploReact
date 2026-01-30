@@ -1,18 +1,18 @@
 /* Importar una fuente bonita de Google Fonts (Opcional pero recomendado) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* --- Contenedor Principal --- */
 .header-container {
 background: #000000;
 background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 239, 247, 1) 100%, rgba(199, 87, 87, 1) 100%);
     color: #ffffff;
     display: flex; 
     justify-content: space-between; 
-    align-items: center; /* Centra verticalmente */
-    padding: 0.5rem 2rem; /* Espacio arriba/abajo e izq/der */
+    align-items: center; 
+    padding: 0.5rem 2rem;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave abajo */
-    position: fixed; /* Fijo al top para ocupar todo el ancho */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    position:fixed
+    ; 
     top: 0;
     left: 0;
     right: 0;
@@ -21,28 +21,26 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     z-index: 1000;
 }
 
-/* --- Logotipo --- */
 .logo-container {
     display: flex;
     align-items: center;
 }
 
 .logo-img {
-    height: 50px; /* Ajusta esto según el tamaño de tu imagen */
+    height: 100px; 
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .logo-img:hover {
-    transform: scale(1.05); /* Efecto zoom suave */
+    transform: scale(1.05); 
 }
 
-/* --- Menú Central --- */
 .menu-list {
     display: flex;
-    list-style: none; /* Quita los puntos de la lista */
-    gap: 2rem; /* Espacio entre palabras */
+    list-style: none; 
+    gap: 2rem; 
     margin: 0;
     padding: 0;
 }
@@ -55,7 +53,6 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     transition: color 0.3s ease;
 }
 
-/* Efecto Hover (Línea debajo al pasar el mouse) */
 .menu-list li::after {
     content: '';
     position: absolute;
@@ -63,7 +60,7 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: #61dafb; /* Color azul estilo React */
+    background-color: #61dafb; 
     transition: width 0.3s ease;
 }
 
@@ -75,7 +72,6 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     width: 100%;
 }
 
-/* --- Redes Sociales --- */
 .redes-list {
     display: flex;
     list-style: none;
@@ -119,7 +115,7 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     
     .menu-list {
         gap: 1rem;
-        flex-wrap: wrap; /* Permitir que bajen de línea si no caben */
+        flex-wrap: wrap; 
         justify-content: center;
     }
 }
