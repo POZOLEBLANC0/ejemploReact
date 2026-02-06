@@ -1,20 +1,19 @@
-import Encabezado from "./encabezado"   
-import Expresiones from "./expresiones"
-import Cards from "./cards"
-import Footer from "./footer"
-import Promociones from "./promociones"
-
+import Encabezado from "./encabezado.jsx";
+import ContenedorCards from "./cards.jsx";
+import Footer from "./footer.jsx";
+import { useState } from "react";
 
 function App() {
+  const[vista,setVista]=useState('Inicio');
+  console.log('Vista actual:', vista);
   return (
-    <div><Encabezado/>
-      <Expresiones/>
-      <Cards/>
-      <Promociones name= "Gadiel"/>
-       <Footer/>
+    <div>
+      <Encabezado cambiarVista={setVista} />
+      <ContenedorCards vista={vista} />
+      <Footer/>
     </div>
- 
-  )
+  );
 }
+
 
 export default App

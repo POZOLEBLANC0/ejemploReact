@@ -13,7 +13,8 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     box-sizing: border-box;
-    margin-top: 3rem;
+    margin-top: 25%;
+    
   
 
 }
