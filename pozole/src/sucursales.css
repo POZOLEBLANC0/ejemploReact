@@ -1,0 +1,124 @@
+.branches-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.branch-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.branch-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: var(--card-color); /* Se ilumina con el color del personaje */
+}
+
+/* Imagen de la ciudad */
+.branch-image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.branch-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.branch-card:hover .branch-image img {
+    transform: scale(1.1);
+}
+
+.location-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Información */
+.branch-info {
+    padding: 25px;
+    text-align: left;
+    flex-grow: 1; /* Empuja el botón hacia abajo si falta texto */
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-shadow: none;
+}
+
+.character-ref {
+    color: var(--card-color); /* Usa el color dinámico (Cyan/Rosa/Morado) */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: none;   
+}
+
+.address-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.description-text {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    text-shadow: none;
+}
+
+/* Botón de Mapa */
+.map-btn {
+    background-color: var(--card-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+.map-btn:hover {
+    filter: brightness(1.1);
+}

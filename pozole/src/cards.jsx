@@ -5,6 +5,7 @@ import Deporte from './assets/deporte.jpg';
 import Alimentacion from './assets/alimentacion.jpg';
 import AcercaDe from './acercade';
 import Productos from './productos';
+import Sucursales from './sucursales';
 import PropTypes from 'prop-types';
 
 function Cards() {
@@ -79,10 +80,6 @@ function Contacto(){
     return(
       <h2>Contáctanos</h2>
     );
-}
-
-function Sucursales(){
-    return <h2>Nuestras Sucursales</h2>;
 }
 
 

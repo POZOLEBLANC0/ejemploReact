@@ -6,7 +6,7 @@ function Productos() {
     {
       id: 1,
       titulo: "Fisioterapia Deportiva",
-      imagen: "./img/fisio-deportiva.jpg", // Reemplaza con tus rutas
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsUS0CCMB5GZFcyHy0xMHx1PsNv2Am6LVFBQ&s",
       desc: "Recuperación de lesiones y optimización del rendimiento para atletas.",
       precio: 45,
       esPopular: false
