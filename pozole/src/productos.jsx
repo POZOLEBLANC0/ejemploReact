@@ -1,64 +1,57 @@
-
+import React, { useState, useEffect } from 'react';
+import api from './services/api';
 import './productos.css';
 
 function Productos() {
-  const servicios = [
-    {
-      id: 1,
-      titulo: "Fisioterapia Deportiva",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsUS0CCMB5GZFcyHy0xMHx1PsNv2Am6LVFBQ&s",
-      desc: "Recuperación de lesiones y optimización del rendimiento para atletas.",
-      precio: 45,
-      esPopular: false
-    },
-    {
-      id: 2,
-      titulo: "Terapia Manual",
-      imagen: "./img/terapia-manual.jpg",
-      desc: "Tratamiento directo para contracturas y bloqueos articulares.",
-      precio: 60,
-      esPopular: true
-    },
-    {
-      id: 3,
-      titulo: "Rehabilitación Post-Op",
-      imagen: "./img/rehabilitacion.jpg",
-      desc: "Acompañamiento profesional tras intervenciones quirúrgicas.",
-      precio: 55,
-      esPopular: false
-    }
-  ];
+const [productos, setProductos] = useState([]);
+const [loading, setLoading] = useState(true);
 
-  return (
-    <div className="catalogo-container">
-      <header className="catalogo-header">
-        <h1>Catálogo de Servicios</h1>
-        <p>Selecciona el tratamiento especializado que tu cuerpo necesita</p>
-      </header>
+useEffect(() => {
+  const obtenerProductos= async() => {
+    try{
+      const response = await api.get('products');
+      setProductos(response.data);
+      }catch(error){
+        console.error("Error al obtener productos:", error);
+      }finally {
+        setLoading(false);
+      }
+  };
+  obtenerProductos();
+},[])
 
-      <div className="catalogo-grid">
-        {servicios.map((s) => (
-          <div key={s.id} className={`card ${s.esPopular ? 'popular' : ''}`}>
-            {s.esPopular && <span className="tag">Más Solicitado</span>}
-            
-            <div className="card-image">
-              <img src={s.imagen} alt={s.titulo} />
-            </div>
-
-            <div className="card-content">
-              <h2>{s.titulo}</h2>
-              <p>{s.desc}</p>
-              
-              <div className="card-footer">
-                <span className="price">${s.precio}</span>
-                <button className="btn-reservar">Reservar Cita</button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+if(loading){
+  return <p>Cargando productos...</p>;
 }
+return(
+  <div>
 
+    <main className='classMain'>
+      <header>
+        <h1>Nuestro Catalogo</h1>
+      </header>
+      {productos.map((producto)=>(
+        <article key={producto.id}>
+            <p>{producto.title}</p>
+            <p>{producto.description}</p>
+            <p>{producto.price}</p>
+            <p>{producto.category}</p>
+            <img src={producto.image} alt={producto.title} />
+
+        </article>
+      ))}
+
+
+
+
+
+
+
+    </main>
+
+  </div>
+
+)
+
+}
 export default Productos;

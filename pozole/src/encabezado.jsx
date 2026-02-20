@@ -5,6 +5,7 @@ import iconoInstagram from './assets/ig.png';
 import iconoTwitter from './assets/x.avif';
 import iconoLink from './assets/link.png';
 import PropTypes from 'prop-types';
+import Clima from './clima';
 
 
 function Encabezado({ cambiarVista }) {
@@ -36,6 +37,7 @@ function Menu({cambiarVista}){
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Productos'); cambiarVista('Productos'); }}>Productos</button></li>
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Sucursales'); cambiarVista('Sucursales'); }}>Sucursales</button></li>
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Contacto'); cambiarVista('Contacto'); }}>Contacto</button></li>
+                <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Usuario'); cambiarVista('Usuario'); }}>Usuarios</button></li>          
             </ul>
         </div>
     )
@@ -50,6 +52,7 @@ function RedesSociales(){
                 <li><img src={iconoTwitter} alt="Twitter" /></li>
                 <li><img src={iconoLink} alt="LinkedIn" /></li>
             </ul>
+            <Clima/>
         </div>
     )
 }

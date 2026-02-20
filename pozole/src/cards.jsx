@@ -1,12 +1,13 @@
 import './cards.css'; 
 import Lesiones from './assets/lesiones.jpg';
-import Autocuiaddo from './assets/autocuidado.jpg';
+import Autocuidado from './assets/autocuidado.jpg';
 import Deporte from './assets/deporte.jpg';
 import Alimentacion from './assets/alimentacion.jpg';
 import AcercaDe from './acercade';
 import Productos from './productos';
 import Sucursales from './sucursales';
 import PropTypes from 'prop-types';
+import Usuarios from './usuarios';
 
 function Cards() {
     return (
@@ -34,7 +35,7 @@ function Card1(props) {
 function Card2(props) {
     return (
         <div className="card2">
-            <img src={Autocuiaddo} alt={props.name} className="card-image" />
+            <img src={Autocuidado} alt={props.name} className="card-image" />
             <h3>{props.name}</h3>
             <p>{props.descripcion}</p>
         </div>
@@ -48,18 +49,19 @@ function Card3(props) {
             <h3>{props.name}</h3>
             <p>{props.descripcion}</p>
         </div>
-        )
-    }
-function Card4(props) {
+    )
+}
+
+function Card4(props) { 
     return (
         <div className="card4">
             <img src={Alimentacion} alt={props.name} className="card-image" />
             <h3>{props.name}</h3>
             <p>{props.descripcion}</p>
-            {props.saludarfunc()}
+            {props.saludarfunc ? props.saludarfunc() : null}
         </div>
-        )
-    }
+    )
+}
 
 function saludar(){
     return(
@@ -90,7 +92,8 @@ function ContenedorCards({ vista }){
         'AcercaDe': <AcercaDe/>,
         'Productos': <Productos/>, 
         'Sucursales': <Sucursales/>,
-        'Contacto': <Contacto/>
+        'Contacto': <Contacto/>,
+        'Usuarios': <Usuarios/>
     };
 
     return(
@@ -103,4 +106,5 @@ function ContenedorCards({ vista }){
 ContenedorCards.propTypes = {
     vista: PropTypes.string.isRequired
 }
+
 export default ContenedorCards;

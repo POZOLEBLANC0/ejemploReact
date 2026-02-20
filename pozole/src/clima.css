@@ -1,0 +1,92 @@
+/* =========================================
+   Mini-Widget de Clima (100x75px)
+   Paleta: Tonos azules claros y limpios
+========================================= */
+
+/* Contenedor principal ultra compacto */
+.divClima {
+  background: linear-gradient(135deg, #e0f2fe 0%, #caf0f8 100%);
+  width: 100px;
+  height: 75px;
+  margin: 1rem auto;
+  padding: 4px; /* Padding casi nulo */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(173, 232, 244, 0.6);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Flexbox para centrar todo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Evita que el padding aumente el tamaño total y oculta desbordes */
+  box-sizing: border-box; 
+  overflow: hidden; 
+}
+
+/* Nombre de la ciudad (1er párrafo) */
+.divClima p:nth-of-type(1) {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #0077b6;
+  margin: 0;
+  text-transform: uppercase;
+  
+  /* Evita que el texto baje a otra línea si es muy largo */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 95%;
+  text-align: center;
+}
+
+/* Temperatura (2do párrafo) */
+.divClima p:nth-of-type(2) {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #03045e;
+  margin: 2px 0;
+}
+
+/* Humedad (3er párrafo) */
+.divClima p:nth-of-type(3) {
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: #0077b6;
+  margin: 0;
+}
+
+/* Descripción del clima (4to párrafo) */
+.divClima p:nth-of-type(4) {
+  font-size: 0.55rem;
+  font-weight: 500;
+  color: #00b4d8;
+  margin: 2px 0 0 0;
+  text-transform: capitalize;
+  
+  /* Igual que el título, corta con puntos suspensivos si es largo */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 95%;
+  text-align: center;
+}
+
+/* =========================================
+   Estado de Carga
+========================================= */
+.divClima p:only-child {
+  font-size: 0.65rem;
+  color: #0077b6;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  animation: parpadeo 1.5s infinite;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
