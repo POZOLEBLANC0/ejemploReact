@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './usuarios.css';
 import api from './services/api';
+import RegistrarUsuarios from './registrarUsuarios';
 
 function Usuarios() {
 const [usuarios, setUsuarios] = useState([]);
@@ -25,7 +26,9 @@ if(loading){
 }
     return (
         <div className="tabla-usuarios-container">
+              <RegistrarUsuarios />
             <h2>Usuarios</h2>
+          
             <table className="tabla-usuarios">
                 <thead>
                     <tr>
@@ -43,11 +46,11 @@ if(loading){
                     {usuarios.map(usuario => (
                         <tr key={usuario.id}>
                             <td>{usuario.id}</td>
-                            <td>{usuario.nombre}</td>
-                            <td>{usuario.apellidos}</td>
-                            <td>{usuario.direccion}</td>
-                            <td>{usuario.telefono}</td>
-                            <td>{usuario.correo}</td>
+                            <td>{(usuario.name && (usuario.name.firstname || usuario.name.first)) || usuario.username || usuario.email || '—'}</td>
+                            <td>{(usuario.name && usuario.name.lastname) || '—'}</td>
+                            <td>{(usuario.address && (usuario.address.city || usuario.address.street)) || '—'}</td>
+                            <td>{usuario.phone || usuario.telephone || '—'}</td>
+                            <td>{usuario.email || usuario.correo || '—'}</td>
                             <td>
                                 <button className="btneditar">Editar</button>
                             </td>

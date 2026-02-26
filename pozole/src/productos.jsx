@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from './services/api';
 import './productos.css';
+import RegistrarProductos from './registrarProducto';
 
 function Productos() {
 const [productos, setProductos] = useState([]);
@@ -25,7 +26,7 @@ if(loading){
 }
 return(
   <div>
-
+      <RegistrarProductos/>
     <main className='classMain'>
       <header>
         <h1>Nuestro Catalogo</h1>
@@ -40,11 +41,6 @@ return(
 
         </article>
       ))}
-
-
-
-
-
 
 
     </main>

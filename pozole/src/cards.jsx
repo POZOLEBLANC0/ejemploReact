@@ -7,6 +7,7 @@ import AcercaDe from './acercade';
 import Productos from './productos';
 import Sucursales from './sucursales';
 import PropTypes from 'prop-types';
+import Carrito from './carrito';
 import Usuarios from './usuarios';
 
 function Cards() {
@@ -93,7 +94,8 @@ function ContenedorCards({ vista }){
         'Productos': <Productos/>, 
         'Sucursales': <Sucursales/>,
         'Contacto': <Contacto/>,
-        'Usuarios': <Usuarios/>
+        'Usuarios': <Usuarios/>,
+        'Carrito': <Carrito/>
     };
 
     return(

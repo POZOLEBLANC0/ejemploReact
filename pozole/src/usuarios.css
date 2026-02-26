@@ -1,0 +1,132 @@
+/* =========================================
+   Tabla de Usuarios
+   Paleta: Tonos azules claros y limpios
+========================================= */
+
+/* Contenedor principal para dar margen y permitir scroll horizontal en móviles */
+.tabla-usuarios-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(173, 232, 244, 0.4);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: auto; /* Evita que la tabla se desborde en pantallas pequeñas */
+}
+
+/* Título de la sección */
+.tabla-usuarios-container h2 {
+  color: #0077b6;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos base de la tabla */
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Encabezados de la tabla */
+.tabla-usuarios th {
+  background-color: #0077b6;
+  color: #ffffff;
+  padding: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Redondear las esquinas del encabezado */
+.tabla-usuarios th:first-child {
+  border-top-left-radius: 8px;
+}
+.tabla-usuarios th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* Celdas del cuerpo de la tabla */
+.tabla-usuarios td {
+  padding: 1rem;
+  color: #555555;
+  border-bottom: 1px solid #e0f2fe;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+/* Efecto cebra para las filas (colores intercalados muy suaves) */
+.tabla-usuarios tbody tr:nth-child(even) {
+  background-color: #f8fbff;
+}
+
+/* Efecto hover en las filas */
+.tabla-usuarios tbody tr:hover {
+  background-color: #caf0f8;
+  transition: background-color 0.2s ease;
+}
+
+/* =========================================
+   Botones de Acción
+========================================= */
+
+/* Estilos compartidos para ambos botones */
+.btneditar, .btneliminar {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #ffffff;
+}
+
+/* Botón Editar - Azul vibrante */
+.btneditar {
+  background-color: #00b4d8;
+  box-shadow: 0 2px 5px rgba(0, 180, 216, 0.3);
+}
+
+.btneditar:hover {
+  background-color: #0077b6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 119, 182, 0.4);
+}
+
+/* Botón Eliminar - Rojo suave/coral para no desentonar tanto con el azul */
+.btneliminar {
+  background-color: #ef476f;
+  box-shadow: 0 2px 5px rgba(239, 71, 111, 0.3);
+}
+
+.btneliminar:hover {
+  background-color: #d90429;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(217, 4, 41, 0.4);
+}
+
+/* =========================================
+   Texto de Carga
+========================================= */
+p:only-child {
+  text-align: center;
+  font-family: sans-serif;
+  color: #0077b6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: parpadeo 1.5s infinite;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

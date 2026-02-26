@@ -37,7 +37,8 @@ function Menu({cambiarVista}){
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Productos'); cambiarVista('Productos'); }}>Productos</button></li>
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Sucursales'); cambiarVista('Sucursales'); }}>Sucursales</button></li>
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Contacto'); cambiarVista('Contacto'); }}>Contacto</button></li>
-                <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Usuario'); cambiarVista('Usuario'); }}>Usuarios</button></li>          
+                    <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Usuarios'); cambiarVista('Usuarios'); }}>Usuarios</button></li>
+                <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Carrito'); cambiarVista('Carrito'); }}>Carrito</button></li>         
             </ul>
         </div>
     )
