@@ -55,7 +55,7 @@ if(loading){
                                 <button className="btneditar">Editar</button>
                             </td>
                             <td>
-                                <button className="btneliminar">Eliminar</button>
+                                <button className="btneliminar" onClick={() => removeUsuario(usuario.id)}>Eliminar</button>
                             </td>
                         </tr>
                     ))}
@@ -64,5 +64,16 @@ if(loading){
         </div>
     );
 }
-
+  const removeUsuario = async (usuarioId) => {
+        try {
+            const response = await api.delete(
+                `/users/${usuarioId}`
+            );
+            console.log("Usuario eliminado:", response.data);
+            alert("Usuario eliminado exitosamente");
+        } catch (error) {
+            console.error("Error al eliminar usuario:", error);
+            alert("Error al eliminar usuario");
+        }
+    }
 export default Usuarios;

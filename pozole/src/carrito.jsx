@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './carrito.css';
 import { loadAllPurchasesFromServer } from './cart';
+import RegistrarCarritos from './registrarCarrito';
 
 function Carrito() {
   const [carts, setCarts] = useState([]);
@@ -23,6 +24,7 @@ function Carrito() {
 
   return (
     <div className="carrito-container">
+      <RegistrarCarritos />
       <h2>Tu carrito</h2>
 
       {loading ? (
@@ -40,17 +42,30 @@ function Carrito() {
                   <div className="item-details">
                     <p className="item-title">{item.title}</p>
                     <p className="item-price">${Number(item.price).toFixed(2)} × {item.quantity}</p>
+                  
                   </div>
                 </li>
               ))}
             </ul>
-          </div>
+            <button className="btneliminar" onClick={() => removeCompra(cart.id)}>Eliminar compra</button>
+          </div>  
         ))
       )}
     </div>
   );
 }
-
+const removeCompra = async (cartId) => {
+        try {
+            const response = await api.delete(
+                `/carts/${cartId}`
+            );
+            console.log("Compra eliminada:", response.data);
+            alert("Compra eliminada exitosamente");
+        } catch (error) {
+            console.error("Error al eliminar compra:", error);
+            alert("Error al eliminar compra");
+        }
+    }
 export default Carrito;
 
 

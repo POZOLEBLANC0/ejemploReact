@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from '../services/api';
+import api from './services/api';
 
 
 function RegistrarCarritos() {
@@ -32,7 +32,7 @@ function RegistrarCarritos() {
         try {
             const response = await api.post('carts', nuevoCarrito);
             console.log('Carrito registrado:', response.data);
-            alert('¡Carrito guardado exitosamente! 🛒✨');
+            alert('¡Carrito guardado exitosamente!');
 
             setUserId(''); setProductId(''); setTitle(''); 
             setPrice(''); setDescription(''); setCategory(''); setImage('');

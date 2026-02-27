@@ -11,14 +11,14 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     padding: 0.5rem 2rem;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    position:fixed
-    ; 
+    position:fixed; 
     top: 0;
-    left: 0;
+    left: 0;    
     right: 0;
     width: 100%;
     box-sizing: border-box;
     z-index: 1000;
+    margin-bottom: 50px;
 }
 
 .logo-container {
