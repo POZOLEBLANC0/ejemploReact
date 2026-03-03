@@ -6,9 +6,9 @@ import RegistrarUsuarios from './registrarUsuarios';
 function Usuarios() {
 const [usuarios, setUsuarios] = useState([]);
 const [loading, setLoading] = useState(true);
+const [usuarioEditado, setUsuarioEditado] = useState(null);
 
-useEffect(() => {
-  const obtenerUsuarios= async() => {
+ const obtenerUsuarios= async() => {
     try{
       const response = await api.get('users');
       setUsuarios(response.data);
@@ -18,6 +18,9 @@ useEffect(() => {
         setLoading(false);
       }
   };
+
+useEffect(() => {
+ 
   obtenerUsuarios();
 },[])
 
@@ -26,7 +29,11 @@ if(loading){
 }
     return (
         <div className="tabla-usuarios-container">
-              <RegistrarUsuarios />
+              <RegistrarUsuarios 
+              usuarioEditado={usuarioEditado}
+              limpiarSeleccion={() => setUsuarioEditado(null)}
+              onActualizacionExitosa={obtenerUsuarios}
+              />
             <h2>Usuarios</h2>
           
             <table className="tabla-usuarios">
@@ -52,7 +59,7 @@ if(loading){
                             <td>{usuario.phone || usuario.telephone || '—'}</td>
                             <td>{usuario.email || usuario.correo || '—'}</td>
                             <td>
-                                <button className="btneditar">Editar</button>
+                                <button className="btneditar" onClick={() => setUsuarioEditado(usuario)} >Editar</button>
                             </td>
                             <td>
                                 <button className="btneliminar" onClick={() => removeUsuario(usuario.id)}>Eliminar</button>
