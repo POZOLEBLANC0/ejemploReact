@@ -2,18 +2,22 @@ import Encabezado from "./encabezado.jsx";
 import ContenedorCards from "./cards.jsx";
 import Footer from "./footer.jsx";
 import { useState } from "react";
+import { AuthProvider } from "./AuthContext.jsx";
+
 
 function App() {
-  const[vista,setVista]=useState('Inicio');
+  const [vista, setVista] = useState('Inicio');
   console.log('Vista actual:', vista);
   return (
     <div>
-      <Encabezado cambiarVista={setVista} />
-      <ContenedorCards vista={vista} />
-      <Footer/>
+      <AuthProvider>
+        <Encabezado cambiarVista={setVista} />
+        <ContenedorCards vista={vista} />
+      </AuthProvider>
+
+      <Footer />
     </div>
   );
 }
 
-
-export default App
+export default App;

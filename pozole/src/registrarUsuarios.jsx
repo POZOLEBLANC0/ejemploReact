@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react'; 
 import api from './services/api';
+import PropTypes from 'prop-types'; 
 import './registrarUsuarios.css';
-
 
 function RegistrarUsuarios({ usuarioEditado, limpiarSeleccion, onActualizacionExitosa }) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     useEffect(() => {
         if (usuarioEditado) {
             setUsername(usuarioEditado.username);
@@ -31,12 +31,12 @@ function RegistrarUsuarios({ usuarioEditado, limpiarSeleccion, onActualizacionEx
         try {
             if(usuarioEditado){
                 const respuesta = await api.put(`/users/${usuarioEditado.id}`, nuevoUsuario);
-                console.log('!Usuario actualizado: ', respuesta.data);
+                console.log('¡Usuario actualizado!: ', respuesta.data);
                 alert('Usuario actualizado exitosamente');
                 limpiarSeleccion();
             }else{
                 const respuesta = await api.post('/users', nuevoUsuario);
-                console.log('!Usuario registrado: ', respuesta.data);
+                console.log('¡Usuario registrado!: ', respuesta.data);
                 alert('Usuario registrado exitosamente');
             }
 
@@ -49,7 +49,7 @@ function RegistrarUsuarios({ usuarioEditado, limpiarSeleccion, onActualizacionEx
 
     return (
         <div>
-            <h2>Registrar Usuario</h2>
+            <h2>{usuarioEditado ? 'Editar Usuario' : 'Registrar Usuario'}</h2> {}
             <form onSubmit={handleSubmit}>
                 <label>Nombre de Usuario
                     <input type="text"
@@ -64,19 +64,28 @@ function RegistrarUsuarios({ usuarioEditado, limpiarSeleccion, onActualizacionEx
                         value={email}
                         onChange={(e) => setEmail(e.target.value)} />
                 </label>
-<br />
+                <br />
                 <label>Contraseña
                     <input type="password"
                     placeholder = "Contraseña"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)} />
                 </label>
-<br />
-                <button>Guardar Usuario</button>
-
+                <br />
+                <button>{usuarioEditado ? 'Actualizar Usuario' : 'Guardar Usuario'}</button>
             </form>
         </div>
     )
 }
+
+RegistrarUsuarios.propTypes = {
+    usuarioEditado: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), 
+        username: PropTypes.string,
+        email: PropTypes.string
+    }),
+    limpiarSeleccion: PropTypes.func.isRequired,
+    onActualizacionExitosa: PropTypes.func
+};
 
 export default RegistrarUsuarios;

@@ -1,0 +1,120 @@
+/* =========================================
+   Inicio de Sesión
+   Paleta: Tonos azules claros y limpios
+========================================= */
+
+/* Tarjeta principal centrada */
+.inicioSesion {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 100%;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #e0f2fe;
+  box-shadow: 0 10px 30px rgba(173, 232, 244, 0.5);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.inicioSesion:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 119, 182, 0.15);
+}
+
+/* Título */
+.inicioSesion h2 {
+  color: #0077b6;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Contenedor del formulario */
+.inicioSesion form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Etiquetas (Labels) */
+.inicioSesion label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #03045e;
+  margin-bottom: -8px; /* Acerca el texto a la caja */
+  margin-left: 4px;
+}
+
+/* Cajas de texto (Inputs) */
+.inicioSesion input[type="text"],
+.inicioSesion input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #caf0f8;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #03045e;
+  background-color: #f8fbff;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Efecto al hacer clic en los inputs */
+.inicioSesion input:focus {
+  outline: none;
+  border-color: #00b4d8;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.15);
+}
+
+/* Estilos base para ambos botones */
+.inicioSesion button {
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+/* Botón Principal (Iniciar Sesión) */
+.inicioSesion button[type="submit"] {
+  background-color: #0077b6;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.3);
+}
+
+.inicioSesion button[type="submit"]:hover {
+  background-color: #03045e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(3, 4, 94, 0.4);
+}
+
+/* Botón Secundario (Cancelar) */
+.inicioSesion button[type="button"] {
+  background-color: #ffffff;
+  color: #0077b6;
+  border: 2px solid #e0f2fe;
+  margin-top: 0; /* Para que quede pegadito al de enviar */
+}
+
+.inicioSesion button[type="button"]:hover {
+  background-color: #e0f2fe;
+  border-color: #90e0ef;
+  color: #03045e;
+}
+
+/* Efecto al presionar cualquier botón */
+.inicioSesion button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+

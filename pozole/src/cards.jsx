@@ -7,7 +7,7 @@ import AcercaDe from './acercade';
 import Productos from './productos';
 import Sucursales from './sucursales';
 import PropTypes from 'prop-types';
-import Carrito from './carrito';
+import InicioSesion from './inicioSesion';
 import Usuarios from './usuarios';
 
 function Cards() {
@@ -64,6 +64,27 @@ function Card4(props) {
     )
 }
 
+Card1.propTypes = {
+    name: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired
+};
+
+Card2.propTypes = {
+    name: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired
+};
+
+Card3.propTypes = {
+    name: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired
+};
+
+Card4.propTypes = {
+    name: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired,
+    saludarfunc: PropTypes.func // Es opcional, así que no lleva .isRequired
+};
+
 function saludar(){
     return(
         <div>
@@ -95,7 +116,7 @@ function ContenedorCards({ vista }){
         'Sucursales': <Sucursales/>,
         'Contacto': <Contacto/>,
         'Usuarios': <Usuarios/>,
-        'Carrito': <Carrito/>
+        'InicioSesion': <InicioSesion/>
     };
 
     return(

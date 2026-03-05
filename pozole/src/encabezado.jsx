@@ -6,6 +6,7 @@ import iconoTwitter from './assets/x.avif';
 import iconoLink from './assets/link.png';
 import PropTypes from 'prop-types';
 import Clima from './clima';
+import { useAuth } from './AuthContext.jsx';
 
 
 function Encabezado({ cambiarVista }) {
@@ -29,6 +30,7 @@ function Logo() {
 }
 
 function Menu({cambiarVista}){
+    const {isLoggedIn} = useAuth();
     return(
         <div className='menuDiv'>
             <ul className="menu-list">
@@ -36,9 +38,14 @@ function Menu({cambiarVista}){
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: AcercaDe'); cambiarVista('AcercaDe'); }}>Acerca de</button></li>
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Productos'); cambiarVista('Productos'); }}>Productos</button></li>
                 <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Sucursales'); cambiarVista('Sucursales'); }}>Sucursales</button></li>
-                <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Contacto'); cambiarVista('Contacto'); }}>Contacto</button></li>
-                    <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Usuarios'); cambiarVista('Usuarios'); }}>Usuarios</button></li>
-                <li><button type="button" className="menuButton" onClick={() => { console.log('menu click: Carrito'); cambiarVista('Carrito'); }}>Carrito</button></li>         
+                {isLoggedIn ?(
+                    <>
+                    <li onClick={() => cambiarVista ("Usuarios")}>Usuario</li>
+                    <li onClick={() => cambiarVista ("Carrito")}>Carrito</li>
+                    </>
+                ) : (
+                    <li onClick={() => cambiarVista ("InicioSesion")}>Iniciar Sesion</li>
+                )}
             </ul>
         </div>
     )
