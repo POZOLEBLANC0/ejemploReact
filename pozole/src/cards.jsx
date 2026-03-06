@@ -9,6 +9,7 @@ import Sucursales from './sucursales';
 import PropTypes from 'prop-types';
 import InicioSesion from './inicioSesion';
 import Usuarios from './usuarios';
+import Carrito from './carrito';
 
 function Cards() {
     return (
@@ -107,7 +108,7 @@ function Contacto(){
 }
 
 
-function ContenedorCards({ vista }){
+function ContenedorCards({ vista, cambiarVista }) {
     
     const vistas = {
         'Inicio': <Inicio/>,
@@ -116,7 +117,8 @@ function ContenedorCards({ vista }){
         'Sucursales': <Sucursales/>,
         'Contacto': <Contacto/>,
         'Usuarios': <Usuarios/>,
-        'InicioSesion': <InicioSesion/>
+        'InicioSesion': <InicioSesion chVista={cambiarVista}/>,
+        'Carrito': <Carrito/>
     };
 
     return(
@@ -127,7 +129,8 @@ function ContenedorCards({ vista }){
 }
 
 ContenedorCards.propTypes = {
-    vista: PropTypes.string.isRequired
+    vista: PropTypes.string.isRequired,
+    cambiarVista: PropTypes.func.isRequired    
 }
 
 export default ContenedorCards;

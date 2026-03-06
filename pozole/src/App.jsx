@@ -12,7 +12,7 @@ function App() {
     <div>
       <AuthProvider>
         <Encabezado cambiarVista={setVista} />
-        <ContenedorCards vista={vista} />
+        <ContenedorCards vista={vista} chVista={setVista} />
       </AuthProvider>
 
       <Footer />
