@@ -10,6 +10,8 @@ import PropTypes from 'prop-types';
 import InicioSesion from './inicioSesion';
 import Usuarios from './usuarios';
 import Carrito from './carrito';
+import Categorias from './categorias';
+
 
 function Cards() {
     return (
@@ -118,7 +120,8 @@ function ContenedorCards({ vista, cambiarVista }) {
         'Contacto': <Contacto/>,
         'Usuarios': <Usuarios/>,
         'InicioSesion': <InicioSesion chVista={cambiarVista}/>,
-        'Carrito': <Carrito/>
+        'Carrito': <Carrito/>,
+        'Categorias':<Categorias/>
     };
 
     return(

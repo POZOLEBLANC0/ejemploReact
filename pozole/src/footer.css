@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 .footer-container {
-background: #000000;
-background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 239, 247, 1) 100%, rgba(199, 87, 87, 1) 100%);
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 239, 247, 1) 100%, rgba(199, 87, 87, 1) 100%);
     color: #ffffff; 
     padding: 2rem 1rem; 
     text-align: center; 
@@ -11,17 +11,5 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgb
     letter-spacing: 0.5px; 
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
     box-sizing: border-box;
-    margin-top: 25%;
-    
-  
-
 }
-
-.footer-container p {
-    margin: 0;
-    color: #ffffff;
-   
-}
-
