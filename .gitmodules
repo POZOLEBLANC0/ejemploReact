@@ -1,0 +1,3 @@
+[submodule "backend-tienda-virtual"]
+	path = backend-tienda-virtual
+	url = https://github.com/POZOLEBLANC0/ejemploReact.git
